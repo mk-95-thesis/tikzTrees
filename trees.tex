@@ -52,7 +52,7 @@
 }
 
 
-% third order tree (type I adn II)
+% third order tree (type I and II)
 \newcommand\oIIItI[3]{
   \begin{tikzpicture}[grow'=up,
     baseline= \tSize*0.25em,
@@ -75,6 +75,74 @@
     #1 % root node
     child{ #2
       child{ #3 }}
+;
+\end{tikzpicture}
+}
+
+% fourth order tree (type I, II, III, and IV)
+\newcommand\oIVtI[4]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.25em,
+    level/.style={level distance = \tSize*1.5em},
+    level 1/.style={sibling distance = \tSize*1.5em},
+    ]
+    #1 % root node
+    child{ #2 }
+    child{ #3 }
+    child{ #4 }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oIVtII[4]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.8em,
+    level/.style={level distance = \tSize*1.5em},
+    level 1/.style={sibling distance = \tSize*1.5em},
+    level 2/.style={sibling distance = \tSize*0.75em}
+    ]
+    #1 % root node
+    child{ #2
+      child { #4 }
+    }
+    child{ #3 }
+;
+\end{tikzpicture}
+}
+
+
+
+\newcommand\oIVtIII[4]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*1em,
+    level/.style={level distance = \tSize*1.5em},
+    level 1/.style={sibling distance = \tSize*1.5em},
+    level 2/.style={sibling distance = \tSize*1.5em},
+    level 3/.style={sibling distance = \tSize*0.75em}
+    ]
+    #1 % root node
+    child{ #2
+      child{ #3 }
+      child{ #4 }
+    }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oIVtIV[4]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*1.3em,
+    level/.style={level distance = \tSize*1.5em},
+    level 1/.style={sibling distance = \tSize*1.5em},
+    level 2/.style={sibling distance = \tSize*0.75em},
+    level 3/.style={sibling distance = \tSize*0.5em}
+    ]
+    #1 % root node
+    child{ #2
+      child{ #3
+        child { #4 }
+        }
+    }
 ;
 \end{tikzpicture}
 }
