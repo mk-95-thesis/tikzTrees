@@ -1,0 +1,51 @@
+
+
+% \usetikzlibrary{arrows}
+
+% define some variables that determines the spacing and sizes of the trees and vertices.
+\newcommand\vSize{0.3}
+\newcommand\tSize{0.75}
+
+\tikzset{
+  treenode/.style = {align=center, inner sep=0pt, text centered,
+    font=\sffamily},
+  node_ImQ/.style = {treenode, circle, white, font=\sffamily\bfseries, draw=black,
+    fill=black, text width=\vSize*1.5em},% arbre rouge noir, noeud noir
+  node_Q/.style = {treenode, circle, black, draw=black,
+    text width=\vSize*1.5em, very thick},% arbre rouge noir, noeud rouge
+  node_I/.style = {treenode, rectangle, black, draw=black,
+    minimum width=\vSize*1em, minimum height=\vSize*1em, very thick}% arbre rouge noir, nil
+}
+
+\newcommand\QNode{node [node_Q] {}}
+\newcommand\INode{node [node_I] {}}
+\newcommand\ImQNode{node [node_ImQ] {}}
+
+\newcommand\RQNode{\node [node_Q] {}}
+\newcommand\RINode{\node [node_I] {}}
+\newcommand\RImQNode{\node [node_ImQ] {}}
+
+
+% firt order tree
+\newcommand\oItI[1]{
+ \begin{tikzpicture}[grow'=up,
+    level/.style={level distance = \tSize*1.5em},
+    level 1/.style={sibling distance = \tSize*1.5em},
+    level 2/.style={sibling distance = \tSize*0.75em},
+    ]
+    #1
+    ;
+  \end{tikzpicture}
+  }
+
+% second order tree
+\newcommand\oIItI[2]{
+  \begin{tikzpicture}[grow'=up,
+    level/.style={level distance = \tSize*1.5em},
+    level 1/.style={sibling distance = \tSize*1.5em},
+    ]
+    #1 % root node
+    child{ #2 }
+;
+\end{tikzpicture}
+}
