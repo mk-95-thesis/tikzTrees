@@ -315,8 +315,20 @@
 
 %  order 1:
 %  --------
-
-%  ImQf
 \newcommand{\ImQf}{\oItI{\RImQNode}}
 \newcommand{\If}{\oItI{\RINode}}
 \newcommand{\Qf}{\oItI{\RQNode}}
+
+%  order 2:
+%  --------
+\newcommand{\ImQfuImQf}{\oIItI{\RImQNode}{\ImQNode}}
+\newcommand{\IfuImQf}{\oIItI{\RINode}{\ImQNode}}
+\newcommand{\QfuImQf}{\oIItI{\RQNode}{\ImQNode}}
+
+\newcommand{\ImQfuIf}{\oIItI{\RImQNode}{\INode}}
+\newcommand{\IfuIf}{\oIItI{\RINode}{\INode}}
+\newcommand{\QfuIf}{\oIItI{\RQNode}{\INode}}
+
+\newcommand{\ImQfuQf}{\oIItI{\RImQNode}{\QNode}}
+\newcommand{\IfuQf}{\oIItI{\RINode}{\QNode}}
+\newcommand{\QfuQf}{\oIItI{\RQNode}{\QNode}}
