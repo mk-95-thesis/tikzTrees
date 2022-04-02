@@ -1,6 +1,19 @@
+% ---- Author : Mokbel Karam ----
+% ---- Name: Trees ----
+% ---- Date: April 2, 2022 ----
+% ---- version: 0.1 ----
+% ---- Required packages:
+% - \usepackage{tikz}
 
 
-% \usetikzlibrary{arrows}
+% commands that can be redefined:
+% \vSize : determines the size of the vertices as: \vSize*1.5em
+% \tSize : determines the size of the tree (level and sibling distances) as: \tSize*1.5em
+% \wf: wrapping function that wrape the tree in equations
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 % define some variables that determines the spacing and sizes of the trees and vertices.
 \newcommand\vSize{0.3}
@@ -10,11 +23,11 @@
   treenode/.style = {align=center, inner sep=0pt, text centered,
     font=\sffamily},
   node_ImQ/.style = {treenode, circle, white, font=\sffamily\bfseries, draw=black,
-    fill=black, text width=\vSize*1.5em},% arbre rouge noir, noeud noir
+    fill=black, text width=\vSize*1.5em},% black filled node
   node_Q/.style = {treenode, circle, black, draw=black,
-    text width=\vSize*1.5em, very thick},% arbre rouge noir, noeud rouge
+    text width=\vSize*1.5em, very thick},% bkack empty node
   node_I/.style = {treenode, rectangle, black, draw=black,
-    minimum width=\vSize*1em, minimum height=\vSize*1em, very thick}% arbre rouge noir, nil
+    minimum width=\vSize*1em, minimum height=\vSize*1em, very thick}% square node
 }
 
 \tikzset{
@@ -352,3 +365,5 @@
 \newcommand{\QfuQfuImQf}{\oIIItII{\RQNode}{\QNode}{\ImQNode}}
 \newcommand{\QfuQfuIf}{\oIIItII{\RQNode}{\QNode}{\INode}}
 \newcommand{\QfuQfuQf}{\oIIItII{\RQNode}{\QNode}{\QNode}}
+
+% TODO: Order 4 trees
