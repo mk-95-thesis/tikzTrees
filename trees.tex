@@ -1,0 +1,369 @@
+% ---- Author : Mokbel Karam ----
+% ---- Name: Trees ----
+% ---- Date: April 2, 2022 ----
+% ---- version: 0.1 ----
+% ---- Required packages:
+% - \usepackage{tikz}
+
+
+% commands that can be redefined:
+% \vSize : determines the size of the vertices as: \vSize*1.5em
+% \tSize : determines the size of the tree (level and sibling distances) as: \tSize*1.5em
+% \wf: wrapping function that wrape the tree in equations
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% define some variables that determines the spacing and sizes of the trees and vertices.
+\newcommand\vSize{0.3}
+\newcommand\tSize{0.5}
+
+\tikzset{
+  treenode/.style = {align=center, inner sep=0pt, text centered,
+    font=\sffamily},
+  node_ImQ/.style = {treenode, circle, white, font=\sffamily\bfseries, draw=black,
+    fill=black, text width=\vSize*1.5em},% black filled node
+  node_Q/.style = {treenode, circle, black, draw=black,
+    text width=\vSize*1.5em, very thick},% bkack empty node
+  node_I/.style = {treenode, rectangle, black, draw=black,
+    minimum width=\vSize*1em, minimum height=\vSize*1em, very thick}% square node
+}
+
+\tikzset{
+  level/.style={
+    level distance = \tSize*1.5em,
+    sibling distance = \tSize*1.5em
+  }
+}
+
+
+\newcommand\QNode{node [node_Q] {}}
+\newcommand\INode{node [node_I] {}}
+\newcommand\ImQNode{node [node_ImQ] {}}
+
+\newcommand\RQNode{\node [node_Q] {}}
+\newcommand\RINode{\node [node_I] {}}
+\newcommand\RImQNode{\node [node_ImQ] {}}
+
+
+% firt order tree
+\newcommand\oItI[1]{
+ \begin{tikzpicture}[grow'=up]
+    #1
+    ;
+  \end{tikzpicture}
+  }
+
+% second order tree
+\newcommand\oIItI[2]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.25em]
+    #1 % root node
+    child{ #2 }
+;
+\end{tikzpicture}
+}
+
+
+% third order tree (type I and II)
+\newcommand\oIIItI[3]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.25em]
+    #1 % root node
+    child{ #2 }
+    child{ #3 }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oIIItII[3]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.8em]
+    #1 % root node
+    child{ #2
+      child{ #3 }}
+;
+\end{tikzpicture}
+}
+
+% fourth order tree (type I, II, III, and IV)
+\newcommand\oIVtI[4]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.25em]
+    #1 % root node
+    child{ #2 }
+    child{ #3 }
+    child{ #4 }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oIVtII[4]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.8em]
+    #1 % root node
+    child{ #2
+      child { #4 }
+    }
+    child{ #3 }
+;
+\end{tikzpicture}
+}
+
+
+
+\newcommand\oIVtIII[4]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*1em]
+    #1 % root node
+    child{ #2
+      child{ #3 }
+      child{ #4 }
+    }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oIVtIV[4]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*1.3em]
+    #1 % root node
+    child{ #2
+      child{ #3
+        child { #4 }
+        }
+    }
+;
+\end{tikzpicture}
+}
+
+
+% fifth order tree (type I, II, III, IV, V, VI, VII, VIII, and IX)
+\newcommand\oVtI[5]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.25em]
+    #1 % root node
+    child{ #2 }
+    child{ #3 }
+    child{ #4 }
+    child{ #5 }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oVtII[5]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.8em]
+    #1 % root node
+    child{ #2
+      child { #5 }
+    }
+    child{ #3 }
+    child{ #4 }
+;
+\end{tikzpicture}
+}
+
+
+\newcommand\oVtIII[5]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*0.8em]
+    #1 % root node
+    child{ #2
+      child { #4 }
+      child { #5 }
+    }
+    child{ #3 }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oVtIV[5]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*1.5em]
+    #1 % root node
+    child{ #2
+      child { #4
+        child { #5 }
+        }
+    }
+    child { #3 }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oVtV[5]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*1em]
+    #1 % root node
+    child{ #2
+      child { #4 }
+    }
+    child { #3
+      child{ #5 }
+    }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oVtVI[5]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*1.3em]
+    #1 % root node
+    child{ #2
+      child { #3 }
+      child { #4 }
+      child { #5 }
+    }
+;
+\end{tikzpicture}
+}
+
+\newcommand\oVtVII[5]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*1.5em]
+    #1 % root node
+    child{ #2
+      child { #3
+      child { #5 }}
+      child { #4 }
+      }
+;
+\end{tikzpicture}
+}
+
+
+\newcommand\oVtVIII[5]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*1.5em]
+    #1 % root node
+    child{ #2
+      child { #3
+        child { #4 }
+        child{ #5 }
+      }}
+;
+\end{tikzpicture}
+}
+
+\newcommand\oVtIX[5]{
+  \begin{tikzpicture}[grow'=up,
+    baseline= \tSize*2.2em]
+    #1 % root node
+    child{ #2
+      child { #3
+        child { #4
+          child{ #5 }
+      }}}
+;
+\end{tikzpicture}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              macros applied to trees
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% wrapping function
+\newcommand{\wf}{\mathcal{F}}
+% wrapper aroud the tree:
+\newcommand{\w}[1]{\wf\left(#1\right)}
+
+% scale the tree sizes
+\newcommand{\s}[2]{
+% scale based on the first parameter.
+\tikzset{level/.append style={level distance = #1*\tSize*1.5em, sibling distance = #1*\tSize*1.5em}}
+#2
+% scale back to the original size
+\tikzset{level/.append style={level distance = \tSize*1.5em, sibling distance = \tSize*1.5em}}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Elementary Differentials
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  order 1:
+%  --------
+\newcommand{\ImQf}{\oItI{\RImQNode}}
+\newcommand{\If}{\oItI{\RINode}}
+\newcommand{\Qf}{\oItI{\RQNode}}
+
+%  order 2:
+%  --------
+\newcommand{\ImQfuImQf}{\oIItI{\RImQNode}{\ImQNode}}
+\newcommand{\IfuImQf}{\oIItI{\RINode}{\ImQNode}}
+\newcommand{\QfuImQf}{\oIItI{\RQNode}{\ImQNode}}
+
+\newcommand{\ImQfuIf}{\oIItI{\RImQNode}{\INode}}
+\newcommand{\IfuIf}{\oIItI{\RINode}{\INode}}
+\newcommand{\QfuIf}{\oIItI{\RQNode}{\INode}}
+
+\newcommand{\ImQfuQf}{\oIItI{\RImQNode}{\QNode}}
+\newcommand{\IfuQf}{\oIItI{\RINode}{\QNode}}
+\newcommand{\QfuQf}{\oIItI{\RQNode}{\QNode}}
+
+
+% order 3:
+% --------
+% for order 3 trees we are not going to add all The
+% possible combination of the elementary derivatives
+% we are going to consider only the one we need.
+\newcommand{\ImQfuuImQfImQf}{\oIIItI{\RImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuuImQfIf}{\oIIItI{\RImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuuImQfQf}{\oIIItI{\RImQNode}{\ImQNode}{\QNode}}
+
+
+\newcommand{\ImQfuuIfIf}{\oIIItI{\RImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuuQfIf}{\oIIItI{\RImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuuIfQf}{\oIIItI{\RImQNode}{\INode}{\QNode}}
+\newcommand{\ImQfuuQfQf}{\oIIItI{\RImQNode}{\QNode}{\QNode}}
+
+\newcommand{\IfuuImQfImQf}{\oIIItI{\RINode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuuImQfIf}{\oIIItI{\RINode}{\ImQNode}{\INode}}
+\newcommand{\IfuuImQfQf}{\oIIItI{\RINode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuIfIf}{\oIIItI{\RINode}{\INode}{\INode}}
+\newcommand{\IfuuIfQf}{\oIIItI{\RINode}{\INode}{\QNode}}
+\newcommand{\IfuuQfIf}{\oIIItI{\RINode}{\QNode}{\INode}}
+
+\newcommand{\QfuuImQfImQf}{\oIIItI{\RQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuuImQfIf}{\oIIItI{\RQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuuImQfQf}{\oIIItI{\RQNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuuIfIf}{\oIIItI{\RQNode}{\INode}{\INode}}
+\newcommand{\QfuuIfQf}{\oIIItI{\RQNode}{\INode}{\QNode}}
+\newcommand{\QfuuQfIf}{\oIIItI{\RQNode}{\QNode}{\INode}}
+
+\newcommand{\ImQfuImQfuImQf}{\oIIItII{\RImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuImQfuIf}{\oIIItII{\RImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuImQfuQf}{\oIIItII{\RImQNode}{\ImQNode}{\QNode}}
+
+\newcommand{\ImQfuIfuImQf}{\oIIItII{\RImQNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuIfuIf}{\oIIItII{\RImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuIfuQf}{\oIIItII{\RImQNode}{\INode}{\QNode}}
+
+\newcommand{\ImQfuQfuImQf}{\oIIItII{\RImQNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuQfuIf}{\oIIItII{\RImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuQfuQf}{\oIIItII{\RImQNode}{\QNode}{\QNode}}
+
+\newcommand{\IfuImQfuImQf}{\oIIItII{\RINode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuImQfuIf}{\oIIItII{\RINode}{\ImQNode}{\INode}}
+\newcommand{\IfuImQfuQf}{\oIIItII{\RINode}{\ImQNode}{\QNode}}
+
+\newcommand{\IfuIfuImQf}{\oIIItII{\RINode}{\INode}{\ImQNode}}
+\newcommand{\IfuIfuIf}{\oIIItII{\RINode}{\INode}{\INode}}
+\newcommand{\IfuIfuQf}{\oIIItII{\RINode}{\INode}{\QNode}}
+
+\newcommand{\IfuQfuImQf}{\oIIItII{\RINode}{\QNode}{\ImQNode}}
+\newcommand{\IfuQfuIf}{\oIIItII{\RINode}{\QNode}{\INode}}
+\newcommand{\IfuQfuQf}{\oIIItII{\RINode}{\QNode}{\QNode}}
+
+\newcommand{\QfuImQfuImQf}{\oIIItII{\RQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuImQfuIf}{\oIIItII{\RQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuImQfuQf}{\oIIItII{\RQNode}{\ImQNode}{\QNode}}
+
+\newcommand{\QfuIfuImQf}{\oIIItII{\RQNode}{\INode}{\ImQNode}}
+\newcommand{\QfuIfuIf}{\oIIItII{\RQNode}{\INode}{\INode}}
+\newcommand{\QfuIfuQf}{\oIIItII{\RQNode}{\INode}{\QNode}}
+
+\newcommand{\QfuQfuImQf}{\oIIItII{\RQNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuQfuIf}{\oIIItII{\RQNode}{\QNode}{\INode}}
+\newcommand{\QfuQfuQf}{\oIIItII{\RQNode}{\QNode}{\QNode}}
+
+% TODO: Order 4 trees
