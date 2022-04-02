@@ -307,3 +307,98 @@
 ;
 \end{tikzpicture}
 }
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%              macros applied to trees
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% wrapper aroud the tree:
+\newcommand{\w}[1]{\mathcal{F}\left(#1\right)}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%            Elementary Differentials
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%  order 1:
+%  --------
+\newcommand{\ImQf}{\oItI{\RImQNode}}
+\newcommand{\If}{\oItI{\RINode}}
+\newcommand{\Qf}{\oItI{\RQNode}}
+
+%  order 2:
+%  --------
+\newcommand{\ImQfuImQf}{\oIItI{\RImQNode}{\ImQNode}}
+\newcommand{\IfuImQf}{\oIItI{\RINode}{\ImQNode}}
+\newcommand{\QfuImQf}{\oIItI{\RQNode}{\ImQNode}}
+
+\newcommand{\ImQfuIf}{\oIItI{\RImQNode}{\INode}}
+\newcommand{\IfuIf}{\oIItI{\RINode}{\INode}}
+\newcommand{\QfuIf}{\oIItI{\RQNode}{\INode}}
+
+\newcommand{\ImQfuQf}{\oIItI{\RImQNode}{\QNode}}
+\newcommand{\IfuQf}{\oIItI{\RINode}{\QNode}}
+\newcommand{\QfuQf}{\oIItI{\RQNode}{\QNode}}
+
+
+% order 3:
+% --------
+% for order 3 trees we are not going to add all The
+% possible combination of the elementary derivatives
+% we are going to consider only the one we need.
+\newcommand{\ImQfuuImQfImQf}{\oIIItI{\RImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuuImQfIf}{\oIIItI{\RImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuuImQfQf}{\oIIItI{\RImQNode}{\ImQNode}{\QNode}}
+
+
+\newcommand{\ImQfuuIfIf}{\oIIItI{\RImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuuQfIf}{\oIIItI{\RImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuuIfQf}{\oIIItI{\RImQNode}{\INode}{\QNode}}
+\newcommand{\ImQfuuQfQf}{\oIIItI{\RImQNode}{\QNode}{\QNode}}
+
+\newcommand{\IfuuImQfImQf}{\oIIItI{\RINode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuuImQfIf}{\oIIItI{\RINode}{\ImQNode}{\INode}}
+\newcommand{\IfuuImQfQf}{\oIIItI{\RINode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuIfIf}{\oIIItI{\RINode}{\INode}{\INode}}
+\newcommand{\IfuuIfQf}{\oIIItI{\RINode}{\INode}{\QNode}}
+\newcommand{\IfuuQfIf}{\oIIItI{\RINode}{\QNode}{\INode}}
+
+\newcommand{\QfuuImQfImQf}{\oIIItI{\RQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuuImQfIf}{\oIIItI{\RQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuuImQfQf}{\oIIItI{\RQNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuuIfIf}{\oIIItI{\RQNode}{\INode}{\INode}}
+\newcommand{\QfuuIfQf}{\oIIItI{\RQNode}{\INode}{\QNode}}
+\newcommand{\QfuuQfIf}{\oIIItI{\RQNode}{\QNode}{\INode}}
+
+\newcommand{\ImQfuImQfuImQf}{\oIIItII{\RImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuImQfuIf}{\oIIItII{\RImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuImQfuQf}{\oIIItII{\RImQNode}{\ImQNode}{\QNode}}
+
+\newcommand{\ImQfuIfuImQf}{\oIIItII{\RImQNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuIfuIf}{\oIIItII{\RImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuIfuQf}{\oIIItII{\RImQNode}{\INode}{\QNode}}
+
+\newcommand{\ImQfuQfuImQf}{\oIIItII{\RImQNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuQfuIf}{\oIIItII{\RImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuQfuQf}{\oIIItII{\RImQNode}{\QNode}{\QNode}}
+
+\newcommand{\IfuImQfuImQf}{\oIIItII{\RINode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuImQfuIf}{\oIIItII{\RINode}{\ImQNode}{\INode}}
+\newcommand{\IfuImQfuQf}{\oIIItII{\RINode}{\ImQNode}{\QNode}}
+
+\newcommand{\IfuIfuImQf}{\oIIItII{\RINode}{\INode}{\ImQNode}}
+\newcommand{\IfuIfuIf}{\oIIItII{\RINode}{\INode}{\INode}}
+\newcommand{\IfuIfuQf}{\oIIItII{\RINode}{\INode}{\QNode}}
+
+\newcommand{\IfuQfuImQf}{\oIIItII{\RINode}{\QNode}{\ImQNode}}
+\newcommand{\IfuQfuIf}{\oIIItII{\RINode}{\QNode}{\INode}}
+\newcommand{\IfuQfuQf}{\oIIItII{\RINode}{\QNode}{\QNode}}
+
+\newcommand{\QfuImQfuImQf}{\oIIItII{\RQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuImQfuIf}{\oIIItII{\RQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuImQfuQf}{\oIIItII{\RQNode}{\ImQNode}{\QNode}}
+
+\newcommand{\QfuIfuImQf}{\oIIItII{\RQNode}{\INode}{\ImQNode}}
+\newcommand{\QfuIfuIf}{\oIIItII{\RQNode}{\INode}{\INode}}
+\newcommand{\QfuIfuQf}{\oIIItII{\RQNode}{\INode}{\QNode}}
+
+\newcommand{\QfuQfuImQf}{\oIIItII{\RQNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuQfuIf}{\oIIItII{\RQNode}{\QNode}{\INode}}
+\newcommand{\QfuQfuQf}{\oIIItII{\RQNode}{\QNode}{\QNode}}
