@@ -1,7 +1,7 @@
 % ---- Author : Mokbel Karam ----
 % ---- Name: Trees ----
-% ---- Date: April 2, 2022 ----
-% ---- version: 0.1 ----
+% ---- Date: April 26, 2022 ----
+% ---- version: 0.2 ----
 % ---- Required packages:
 % - \usepackage{tikz}
 
@@ -46,7 +46,7 @@
 \newcommand\RINode{\node [node_I] {}}
 \newcommand\RImQNode{\node [node_ImQ] {}}
 
-
+% all the levels in the trees are represented from left to right
 % firt order tree
 \newcommand\oItI[1]{
  \begin{tikzpicture}[grow'=up]
@@ -280,90 +280,424 @@
 %            Elementary Differentials
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%  order 1:
-%  --------
-\newcommand{\ImQf}{\oItI{\RImQNode}}
+% TODO: trees for order 5
+
+% ======================================
+% trees of order 1 and type 1
+% ======================================
 \newcommand{\If}{\oItI{\RINode}}
 \newcommand{\Qf}{\oItI{\RQNode}}
+\newcommand{\ImQf}{\oItI{\RImQNode}}
 
-%  order 2:
-%  --------
-\newcommand{\ImQfuImQf}{\oIItI{\RImQNode}{\ImQNode}}
-\newcommand{\IfuImQf}{\oIItI{\RINode}{\ImQNode}}
-\newcommand{\QfuImQf}{\oIItI{\RQNode}{\ImQNode}}
-
-\newcommand{\ImQfuIf}{\oIItI{\RImQNode}{\INode}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======================================
+% trees of order 2 and type 1
+% ======================================
 \newcommand{\IfuIf}{\oIItI{\RINode}{\INode}}
-\newcommand{\QfuIf}{\oIItI{\RQNode}{\INode}}
-
-\newcommand{\ImQfuQf}{\oIItI{\RImQNode}{\QNode}}
 \newcommand{\IfuQf}{\oIItI{\RINode}{\QNode}}
+\newcommand{\IfuImQf}{\oIItI{\RINode}{\ImQNode}}
+\newcommand{\QfuIf}{\oIItI{\RQNode}{\INode}}
 \newcommand{\QfuQf}{\oIItI{\RQNode}{\QNode}}
+\newcommand{\QfuImQf}{\oIItI{\RQNode}{\ImQNode}}
+\newcommand{\ImQfuIf}{\oIItI{\RImQNode}{\INode}}
+\newcommand{\ImQfuQf}{\oIItI{\RImQNode}{\QNode}}
+\newcommand{\ImQfuImQf}{\oIItI{\RImQNode}{\ImQNode}}
 
-
-% order 3:
-% --------
-% for order 3 trees we are not going to add all The
-% possible combination of the elementary derivatives
-% we are going to consider only the one we need.
-\newcommand{\ImQfuuImQfImQf}{\oIIItI{\RImQNode}{\ImQNode}{\ImQNode}}
-\newcommand{\ImQfuuImQfIf}{\oIIItI{\RImQNode}{\ImQNode}{\INode}}
-\newcommand{\ImQfuuImQfQf}{\oIIItI{\RImQNode}{\ImQNode}{\QNode}}
-
-
-\newcommand{\ImQfuuIfIf}{\oIIItI{\RImQNode}{\INode}{\INode}}
-\newcommand{\ImQfuuQfIf}{\oIIItI{\RImQNode}{\QNode}{\INode}}
-\newcommand{\ImQfuuIfQf}{\oIIItI{\RImQNode}{\INode}{\QNode}}
-\newcommand{\ImQfuuQfQf}{\oIIItI{\RImQNode}{\QNode}{\QNode}}
-
-\newcommand{\IfuuImQfImQf}{\oIIItI{\RINode}{\ImQNode}{\ImQNode}}
-\newcommand{\IfuuImQfIf}{\oIIItI{\RINode}{\ImQNode}{\INode}}
-\newcommand{\IfuuImQfQf}{\oIIItI{\RINode}{\ImQNode}{\QNode}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======================================
+% trees of order 3 and type 1
+% ======================================
 \newcommand{\IfuuIfIf}{\oIIItI{\RINode}{\INode}{\INode}}
 \newcommand{\IfuuIfQf}{\oIIItI{\RINode}{\INode}{\QNode}}
+\newcommand{\IfuuIfImQf}{\oIIItI{\RINode}{\INode}{\ImQNode}}
 \newcommand{\IfuuQfIf}{\oIIItI{\RINode}{\QNode}{\INode}}
-
-\newcommand{\QfuuImQfImQf}{\oIIItI{\RQNode}{\ImQNode}{\ImQNode}}
-\newcommand{\QfuuImQfIf}{\oIIItI{\RQNode}{\ImQNode}{\INode}}
-\newcommand{\QfuuImQfQf}{\oIIItI{\RQNode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuQfQf}{\oIIItI{\RINode}{\QNode}{\QNode}}
+\newcommand{\IfuuQfImQf}{\oIIItI{\RINode}{\QNode}{\ImQNode}}
+\newcommand{\IfuuImQfIf}{\oIIItI{\RINode}{\ImQNode}{\INode}}
+\newcommand{\IfuuImQfQf}{\oIIItI{\RINode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuImQfImQf}{\oIIItI{\RINode}{\ImQNode}{\ImQNode}}
 \newcommand{\QfuuIfIf}{\oIIItI{\RQNode}{\INode}{\INode}}
 \newcommand{\QfuuIfQf}{\oIIItI{\RQNode}{\INode}{\QNode}}
+\newcommand{\QfuuIfImQf}{\oIIItI{\RQNode}{\INode}{\ImQNode}}
 \newcommand{\QfuuQfIf}{\oIIItI{\RQNode}{\QNode}{\INode}}
-
-\newcommand{\ImQfuImQfuImQf}{\oIIItII{\RImQNode}{\ImQNode}{\ImQNode}}
-\newcommand{\ImQfuImQfuIf}{\oIIItII{\RImQNode}{\ImQNode}{\INode}}
-\newcommand{\ImQfuImQfuQf}{\oIIItII{\RImQNode}{\ImQNode}{\QNode}}
-
-\newcommand{\ImQfuIfuImQf}{\oIIItII{\RImQNode}{\INode}{\ImQNode}}
-\newcommand{\ImQfuIfuIf}{\oIIItII{\RImQNode}{\INode}{\INode}}
-\newcommand{\ImQfuIfuQf}{\oIIItII{\RImQNode}{\INode}{\QNode}}
-
-\newcommand{\ImQfuQfuImQf}{\oIIItII{\RImQNode}{\QNode}{\ImQNode}}
-\newcommand{\ImQfuQfuIf}{\oIIItII{\RImQNode}{\QNode}{\INode}}
-\newcommand{\ImQfuQfuQf}{\oIIItII{\RImQNode}{\QNode}{\QNode}}
-
-\newcommand{\IfuImQfuImQf}{\oIIItII{\RINode}{\ImQNode}{\ImQNode}}
-\newcommand{\IfuImQfuIf}{\oIIItII{\RINode}{\ImQNode}{\INode}}
-\newcommand{\IfuImQfuQf}{\oIIItII{\RINode}{\ImQNode}{\QNode}}
-
-\newcommand{\IfuIfuImQf}{\oIIItII{\RINode}{\INode}{\ImQNode}}
+\newcommand{\QfuuQfQf}{\oIIItI{\RQNode}{\QNode}{\QNode}}
+\newcommand{\QfuuQfImQf}{\oIIItI{\RQNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuuImQfIf}{\oIIItI{\RQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuuImQfQf}{\oIIItI{\RQNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuuImQfImQf}{\oIIItI{\RQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuuIfIf}{\oIIItI{\RImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuuIfQf}{\oIIItI{\RImQNode}{\INode}{\QNode}}
+\newcommand{\ImQfuuIfImQf}{\oIIItI{\RImQNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuuQfIf}{\oIIItI{\RImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuuQfQf}{\oIIItI{\RImQNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuuQfImQf}{\oIIItI{\RImQNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuuImQfIf}{\oIIItI{\RImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuuImQfQf}{\oIIItI{\RImQNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuuImQfImQf}{\oIIItI{\RImQNode}{\ImQNode}{\ImQNode}}
+% ======================================
+% trees of order 3 and type 2
+% ======================================
 \newcommand{\IfuIfuIf}{\oIIItII{\RINode}{\INode}{\INode}}
 \newcommand{\IfuIfuQf}{\oIIItII{\RINode}{\INode}{\QNode}}
-
-\newcommand{\IfuQfuImQf}{\oIIItII{\RINode}{\QNode}{\ImQNode}}
+\newcommand{\IfuIfuImQf}{\oIIItII{\RINode}{\INode}{\ImQNode}}
 \newcommand{\IfuQfuIf}{\oIIItII{\RINode}{\QNode}{\INode}}
 \newcommand{\IfuQfuQf}{\oIIItII{\RINode}{\QNode}{\QNode}}
-
-\newcommand{\QfuImQfuImQf}{\oIIItII{\RQNode}{\ImQNode}{\ImQNode}}
-\newcommand{\QfuImQfuIf}{\oIIItII{\RQNode}{\ImQNode}{\INode}}
-\newcommand{\QfuImQfuQf}{\oIIItII{\RQNode}{\ImQNode}{\QNode}}
-
-\newcommand{\QfuIfuImQf}{\oIIItII{\RQNode}{\INode}{\ImQNode}}
+\newcommand{\IfuQfuImQf}{\oIIItII{\RINode}{\QNode}{\ImQNode}}
+\newcommand{\IfuImQfuIf}{\oIIItII{\RINode}{\ImQNode}{\INode}}
+\newcommand{\IfuImQfuQf}{\oIIItII{\RINode}{\ImQNode}{\QNode}}
+\newcommand{\IfuImQfuImQf}{\oIIItII{\RINode}{\ImQNode}{\ImQNode}}
 \newcommand{\QfuIfuIf}{\oIIItII{\RQNode}{\INode}{\INode}}
 \newcommand{\QfuIfuQf}{\oIIItII{\RQNode}{\INode}{\QNode}}
-
-\newcommand{\QfuQfuImQf}{\oIIItII{\RQNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuIfuImQf}{\oIIItII{\RQNode}{\INode}{\ImQNode}}
 \newcommand{\QfuQfuIf}{\oIIItII{\RQNode}{\QNode}{\INode}}
 \newcommand{\QfuQfuQf}{\oIIItII{\RQNode}{\QNode}{\QNode}}
-
-% TODO: Order 4 trees
+\newcommand{\QfuQfuImQf}{\oIIItII{\RQNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuImQfuIf}{\oIIItII{\RQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuImQfuQf}{\oIIItII{\RQNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuImQfuImQf}{\oIIItII{\RQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuIfuIf}{\oIIItII{\RImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuIfuQf}{\oIIItII{\RImQNode}{\INode}{\QNode}}
+\newcommand{\ImQfuIfuImQf}{\oIIItII{\RImQNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuQfuIf}{\oIIItII{\RImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuQfuQf}{\oIIItII{\RImQNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuQfuImQf}{\oIIItII{\RImQNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuImQfuIf}{\oIIItII{\RImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuImQfuQf}{\oIIItII{\RImQNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuImQfuImQf}{\oIIItII{\RImQNode}{\ImQNode}{\ImQNode}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ======================================
+% trees of order 4 and type 1
+% ======================================
+\newcommand{\IfuuuIfIfIf}{\oIVtI{\RINode}{\INode}{\INode}{\INode}}
+\newcommand{\IfuuuIfIfQf}{\oIVtI{\RINode}{\INode}{\INode}{\QNode}}
+\newcommand{\IfuuuIfIfImQf}{\oIVtI{\RINode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\IfuuuIfQfIf}{\oIVtI{\RINode}{\INode}{\QNode}{\INode}}
+\newcommand{\IfuuuIfQfQf}{\oIVtI{\RINode}{\INode}{\QNode}{\QNode}}
+\newcommand{\IfuuuIfQfImQf}{\oIVtI{\RINode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\IfuuuIfImQfIf}{\oIVtI{\RINode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\IfuuuIfImQfQf}{\oIVtI{\RINode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuuIfImQfImQf}{\oIVtI{\RINode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuuuQfIfIf}{\oIVtI{\RINode}{\QNode}{\INode}{\INode}}
+\newcommand{\IfuuuQfIfQf}{\oIVtI{\RINode}{\QNode}{\INode}{\QNode}}
+\newcommand{\IfuuuQfIfImQf}{\oIVtI{\RINode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\IfuuuQfQfIf}{\oIVtI{\RINode}{\QNode}{\QNode}{\INode}}
+\newcommand{\IfuuuQfQfQf}{\oIVtI{\RINode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\IfuuuQfQfImQf}{\oIVtI{\RINode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\IfuuuQfImQfIf}{\oIVtI{\RINode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\IfuuuQfImQfQf}{\oIVtI{\RINode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuuQfImQfImQf}{\oIVtI{\RINode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuuuImQfIfIf}{\oIVtI{\RINode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\IfuuuImQfIfQf}{\oIVtI{\RINode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\IfuuuImQfIfImQf}{\oIVtI{\RINode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\IfuuuImQfQfIf}{\oIVtI{\RINode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\IfuuuImQfQfQf}{\oIVtI{\RINode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\IfuuuImQfQfImQf}{\oIVtI{\RINode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\IfuuuImQfImQfIf}{\oIVtI{\RINode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\IfuuuImQfImQfQf}{\oIVtI{\RINode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuuImQfImQfImQf}{\oIVtI{\RINode}{\ImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuuuIfIfIf}{\oIVtI{\RQNode}{\INode}{\INode}{\INode}}
+\newcommand{\QfuuuIfIfQf}{\oIVtI{\RQNode}{\INode}{\INode}{\QNode}}
+\newcommand{\QfuuuIfIfImQf}{\oIVtI{\RQNode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\QfuuuIfQfIf}{\oIVtI{\RQNode}{\INode}{\QNode}{\INode}}
+\newcommand{\QfuuuIfQfQf}{\oIVtI{\RQNode}{\INode}{\QNode}{\QNode}}
+\newcommand{\QfuuuIfQfImQf}{\oIVtI{\RQNode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\QfuuuIfImQfIf}{\oIVtI{\RQNode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\QfuuuIfImQfQf}{\oIVtI{\RQNode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\QfuuuIfImQfImQf}{\oIVtI{\RQNode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuuuQfIfIf}{\oIVtI{\RQNode}{\QNode}{\INode}{\INode}}
+\newcommand{\QfuuuQfIfQf}{\oIVtI{\RQNode}{\QNode}{\INode}{\QNode}}
+\newcommand{\QfuuuQfIfImQf}{\oIVtI{\RQNode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\QfuuuQfQfIf}{\oIVtI{\RQNode}{\QNode}{\QNode}{\INode}}
+\newcommand{\QfuuuQfQfQf}{\oIVtI{\RQNode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\QfuuuQfQfImQf}{\oIVtI{\RQNode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuuuQfImQfIf}{\oIVtI{\RQNode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\QfuuuQfImQfQf}{\oIVtI{\RQNode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuuuQfImQfImQf}{\oIVtI{\RQNode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuuuImQfIfIf}{\oIVtI{\RQNode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\QfuuuImQfIfQf}{\oIVtI{\RQNode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\QfuuuImQfIfImQf}{\oIVtI{\RQNode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\QfuuuImQfQfIf}{\oIVtI{\RQNode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\QfuuuImQfQfQf}{\oIVtI{\RQNode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\QfuuuImQfQfImQf}{\oIVtI{\RQNode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuuuImQfImQfIf}{\oIVtI{\RQNode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuuuImQfImQfQf}{\oIVtI{\RQNode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuuuImQfImQfImQf}{\oIVtI{\RQNode}{\ImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuuuIfIfIf}{\oIVtI{\RImQNode}{\INode}{\INode}{\INode}}
+\newcommand{\ImQfuuuIfIfQf}{\oIVtI{\RImQNode}{\INode}{\INode}{\QNode}}
+\newcommand{\ImQfuuuIfIfImQf}{\oIVtI{\RImQNode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuuuIfQfIf}{\oIVtI{\RImQNode}{\INode}{\QNode}{\INode}}
+\newcommand{\ImQfuuuIfQfQf}{\oIVtI{\RImQNode}{\INode}{\QNode}{\QNode}}
+\newcommand{\ImQfuuuIfQfImQf}{\oIVtI{\RImQNode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuuuIfImQfIf}{\oIVtI{\RImQNode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuuuIfImQfQf}{\oIVtI{\RImQNode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuuuIfImQfImQf}{\oIVtI{\RImQNode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuuuQfIfIf}{\oIVtI{\RImQNode}{\QNode}{\INode}{\INode}}
+\newcommand{\ImQfuuuQfIfQf}{\oIVtI{\RImQNode}{\QNode}{\INode}{\QNode}}
+\newcommand{\ImQfuuuQfIfImQf}{\oIVtI{\RImQNode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuuuQfQfIf}{\oIVtI{\RImQNode}{\QNode}{\QNode}{\INode}}
+\newcommand{\ImQfuuuQfQfQf}{\oIVtI{\RImQNode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuuuQfQfImQf}{\oIVtI{\RImQNode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuuuQfImQfIf}{\oIVtI{\RImQNode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuuuQfImQfQf}{\oIVtI{\RImQNode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuuuQfImQfImQf}{\oIVtI{\RImQNode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuuuImQfIfIf}{\oIVtI{\RImQNode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuuuImQfIfQf}{\oIVtI{\RImQNode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\ImQfuuuImQfIfImQf}{\oIVtI{\RImQNode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuuuImQfQfIf}{\oIVtI{\RImQNode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuuuImQfQfQf}{\oIVtI{\RImQNode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuuuImQfQfImQf}{\oIVtI{\RImQNode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuuuImQfImQfIf}{\oIVtI{\RImQNode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuuuImQfImQfQf}{\oIVtI{\RImQNode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuuuImQfImQfImQf}{\oIVtI{\RImQNode}{\ImQNode}{\ImQNode}{\ImQNode}}
+% ======================================
+% trees of order 4 and type 2
+% ======================================
+\newcommand{\IfuuIfuIfIf}{\oIVtII{\RINode}{\INode}{\INode}{\INode}}
+\newcommand{\IfuuIfuIfQf}{\oIVtII{\RINode}{\INode}{\INode}{\QNode}}
+\newcommand{\IfuuIfuIfImQf}{\oIVtII{\RINode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\IfuuIfuQfIf}{\oIVtII{\RINode}{\INode}{\QNode}{\INode}}
+\newcommand{\IfuuIfuQfQf}{\oIVtII{\RINode}{\INode}{\QNode}{\QNode}}
+\newcommand{\IfuuIfuQfImQf}{\oIVtII{\RINode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\IfuuIfuImQfIf}{\oIVtII{\RINode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\IfuuIfuImQfQf}{\oIVtII{\RINode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuIfuImQfImQf}{\oIVtII{\RINode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuuQfuIfIf}{\oIVtII{\RINode}{\QNode}{\INode}{\INode}}
+\newcommand{\IfuuQfuIfQf}{\oIVtII{\RINode}{\QNode}{\INode}{\QNode}}
+\newcommand{\IfuuQfuIfImQf}{\oIVtII{\RINode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\IfuuQfuQfIf}{\oIVtII{\RINode}{\QNode}{\QNode}{\INode}}
+\newcommand{\IfuuQfuQfQf}{\oIVtII{\RINode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\IfuuQfuQfImQf}{\oIVtII{\RINode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\IfuuQfuImQfIf}{\oIVtII{\RINode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\IfuuQfuImQfQf}{\oIVtII{\RINode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuQfuImQfImQf}{\oIVtII{\RINode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuuImQfuIfIf}{\oIVtII{\RINode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\IfuuImQfuIfQf}{\oIVtII{\RINode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\IfuuImQfuIfImQf}{\oIVtII{\RINode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\IfuuImQfuQfIf}{\oIVtII{\RINode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\IfuuImQfuQfQf}{\oIVtII{\RINode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\IfuuImQfuQfImQf}{\oIVtII{\RINode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\IfuuImQfuImQfIf}{\oIVtII{\RINode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\IfuuImQfuImQfQf}{\oIVtII{\RINode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\IfuuImQfuImQfImQf}{\oIVtII{\RINode}{\ImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuuIfuIfIf}{\oIVtII{\RQNode}{\INode}{\INode}{\INode}}
+\newcommand{\QfuuIfuIfQf}{\oIVtII{\RQNode}{\INode}{\INode}{\QNode}}
+\newcommand{\QfuuIfuIfImQf}{\oIVtII{\RQNode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\QfuuIfuQfIf}{\oIVtII{\RQNode}{\INode}{\QNode}{\INode}}
+\newcommand{\QfuuIfuQfQf}{\oIVtII{\RQNode}{\INode}{\QNode}{\QNode}}
+\newcommand{\QfuuIfuQfImQf}{\oIVtII{\RQNode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\QfuuIfuImQfIf}{\oIVtII{\RQNode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\QfuuIfuImQfQf}{\oIVtII{\RQNode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\QfuuIfuImQfImQf}{\oIVtII{\RQNode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuuQfuIfIf}{\oIVtII{\RQNode}{\QNode}{\INode}{\INode}}
+\newcommand{\QfuuQfuIfQf}{\oIVtII{\RQNode}{\QNode}{\INode}{\QNode}}
+\newcommand{\QfuuQfuIfImQf}{\oIVtII{\RQNode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\QfuuQfuQfIf}{\oIVtII{\RQNode}{\QNode}{\QNode}{\INode}}
+\newcommand{\QfuuQfuQfQf}{\oIVtII{\RQNode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\QfuuQfuQfImQf}{\oIVtII{\RQNode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuuQfuImQfIf}{\oIVtII{\RQNode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\QfuuQfuImQfQf}{\oIVtII{\RQNode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuuQfuImQfImQf}{\oIVtII{\RQNode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuuImQfuIfIf}{\oIVtII{\RQNode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\QfuuImQfuIfQf}{\oIVtII{\RQNode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\QfuuImQfuIfImQf}{\oIVtII{\RQNode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\QfuuImQfuQfIf}{\oIVtII{\RQNode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\QfuuImQfuQfQf}{\oIVtII{\RQNode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\QfuuImQfuQfImQf}{\oIVtII{\RQNode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuuImQfuImQfIf}{\oIVtII{\RQNode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuuImQfuImQfQf}{\oIVtII{\RQNode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuuImQfuImQfImQf}{\oIVtII{\RQNode}{\ImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuuIfuIfIf}{\oIVtII{\RImQNode}{\INode}{\INode}{\INode}}
+\newcommand{\ImQfuuIfuIfQf}{\oIVtII{\RImQNode}{\INode}{\INode}{\QNode}}
+\newcommand{\ImQfuuIfuIfImQf}{\oIVtII{\RImQNode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuuIfuQfIf}{\oIVtII{\RImQNode}{\INode}{\QNode}{\INode}}
+\newcommand{\ImQfuuIfuQfQf}{\oIVtII{\RImQNode}{\INode}{\QNode}{\QNode}}
+\newcommand{\ImQfuuIfuQfImQf}{\oIVtII{\RImQNode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuuIfuImQfIf}{\oIVtII{\RImQNode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuuIfuImQfQf}{\oIVtII{\RImQNode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuuIfuImQfImQf}{\oIVtII{\RImQNode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuuQfuIfIf}{\oIVtII{\RImQNode}{\QNode}{\INode}{\INode}}
+\newcommand{\ImQfuuQfuIfQf}{\oIVtII{\RImQNode}{\QNode}{\INode}{\QNode}}
+\newcommand{\ImQfuuQfuIfImQf}{\oIVtII{\RImQNode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuuQfuQfIf}{\oIVtII{\RImQNode}{\QNode}{\QNode}{\INode}}
+\newcommand{\ImQfuuQfuQfQf}{\oIVtII{\RImQNode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuuQfuQfImQf}{\oIVtII{\RImQNode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuuQfuImQfIf}{\oIVtII{\RImQNode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuuQfuImQfQf}{\oIVtII{\RImQNode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuuQfuImQfImQf}{\oIVtII{\RImQNode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuuImQfuIfIf}{\oIVtII{\RImQNode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuuImQfuIfQf}{\oIVtII{\RImQNode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\ImQfuuImQfuIfImQf}{\oIVtII{\RImQNode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuuImQfuQfIf}{\oIVtII{\RImQNode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuuImQfuQfQf}{\oIVtII{\RImQNode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuuImQfuQfImQf}{\oIVtII{\RImQNode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuuImQfuImQfIf}{\oIVtII{\RImQNode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuuImQfuImQfQf}{\oIVtII{\RImQNode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuuImQfuImQfImQf}{\oIVtII{\RImQNode}{\ImQNode}{\ImQNode}{\ImQNode}}
+% ======================================
+% trees of order 4 and type 3
+% ======================================
+\newcommand{\IfuIfuuIfIf}{\oIVtIII{\RINode}{\INode}{\INode}{\INode}}
+\newcommand{\IfuIfuuIfQf}{\oIVtIII{\RINode}{\INode}{\INode}{\QNode}}
+\newcommand{\IfuIfuuIfImQf}{\oIVtIII{\RINode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\IfuIfuuQfIf}{\oIVtIII{\RINode}{\INode}{\QNode}{\INode}}
+\newcommand{\IfuIfuuQfQf}{\oIVtIII{\RINode}{\INode}{\QNode}{\QNode}}
+\newcommand{\IfuIfuuQfImQf}{\oIVtIII{\RINode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\IfuIfuuImQfIf}{\oIVtIII{\RINode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\IfuIfuuImQfQf}{\oIVtIII{\RINode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\IfuIfuuImQfImQf}{\oIVtIII{\RINode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuQfuuIfIf}{\oIVtIII{\RINode}{\QNode}{\INode}{\INode}}
+\newcommand{\IfuQfuuIfQf}{\oIVtIII{\RINode}{\QNode}{\INode}{\QNode}}
+\newcommand{\IfuQfuuIfImQf}{\oIVtIII{\RINode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\IfuQfuuQfIf}{\oIVtIII{\RINode}{\QNode}{\QNode}{\INode}}
+\newcommand{\IfuQfuuQfQf}{\oIVtIII{\RINode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\IfuQfuuQfImQf}{\oIVtIII{\RINode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\IfuQfuuImQfIf}{\oIVtIII{\RINode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\IfuQfuuImQfQf}{\oIVtIII{\RINode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\IfuQfuuImQfImQf}{\oIVtIII{\RINode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuImQfuuIfIf}{\oIVtIII{\RINode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\IfuImQfuuIfQf}{\oIVtIII{\RINode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\IfuImQfuuIfImQf}{\oIVtIII{\RINode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\IfuImQfuuQfIf}{\oIVtIII{\RINode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\IfuImQfuuQfQf}{\oIVtIII{\RINode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\IfuImQfuuQfImQf}{\oIVtIII{\RINode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\IfuImQfuuImQfIf}{\oIVtIII{\RINode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\IfuImQfuuImQfQf}{\oIVtIII{\RINode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\IfuImQfuuImQfImQf}{\oIVtIII{\RINode}{\ImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuIfuuIfIf}{\oIVtIII{\RQNode}{\INode}{\INode}{\INode}}
+\newcommand{\QfuIfuuIfQf}{\oIVtIII{\RQNode}{\INode}{\INode}{\QNode}}
+\newcommand{\QfuIfuuIfImQf}{\oIVtIII{\RQNode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\QfuIfuuQfIf}{\oIVtIII{\RQNode}{\INode}{\QNode}{\INode}}
+\newcommand{\QfuIfuuQfQf}{\oIVtIII{\RQNode}{\INode}{\QNode}{\QNode}}
+\newcommand{\QfuIfuuQfImQf}{\oIVtIII{\RQNode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\QfuIfuuImQfIf}{\oIVtIII{\RQNode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\QfuIfuuImQfQf}{\oIVtIII{\RQNode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\QfuIfuuImQfImQf}{\oIVtIII{\RQNode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuQfuuIfIf}{\oIVtIII{\RQNode}{\QNode}{\INode}{\INode}}
+\newcommand{\QfuQfuuIfQf}{\oIVtIII{\RQNode}{\QNode}{\INode}{\QNode}}
+\newcommand{\QfuQfuuIfImQf}{\oIVtIII{\RQNode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\QfuQfuuQfIf}{\oIVtIII{\RQNode}{\QNode}{\QNode}{\INode}}
+\newcommand{\QfuQfuuQfQf}{\oIVtIII{\RQNode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\QfuQfuuQfImQf}{\oIVtIII{\RQNode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuQfuuImQfIf}{\oIVtIII{\RQNode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\QfuQfuuImQfQf}{\oIVtIII{\RQNode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuQfuuImQfImQf}{\oIVtIII{\RQNode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuImQfuuIfIf}{\oIVtIII{\RQNode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\QfuImQfuuIfQf}{\oIVtIII{\RQNode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\QfuImQfuuIfImQf}{\oIVtIII{\RQNode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\QfuImQfuuQfIf}{\oIVtIII{\RQNode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\QfuImQfuuQfQf}{\oIVtIII{\RQNode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\QfuImQfuuQfImQf}{\oIVtIII{\RQNode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuImQfuuImQfIf}{\oIVtIII{\RQNode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuImQfuuImQfQf}{\oIVtIII{\RQNode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuImQfuuImQfImQf}{\oIVtIII{\RQNode}{\ImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuIfuuIfIf}{\oIVtIII{\RImQNode}{\INode}{\INode}{\INode}}
+\newcommand{\ImQfuIfuuIfQf}{\oIVtIII{\RImQNode}{\INode}{\INode}{\QNode}}
+\newcommand{\ImQfuIfuuIfImQf}{\oIVtIII{\RImQNode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuIfuuQfIf}{\oIVtIII{\RImQNode}{\INode}{\QNode}{\INode}}
+\newcommand{\ImQfuIfuuQfQf}{\oIVtIII{\RImQNode}{\INode}{\QNode}{\QNode}}
+\newcommand{\ImQfuIfuuQfImQf}{\oIVtIII{\RImQNode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuIfuuImQfIf}{\oIVtIII{\RImQNode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuIfuuImQfQf}{\oIVtIII{\RImQNode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuIfuuImQfImQf}{\oIVtIII{\RImQNode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuQfuuIfIf}{\oIVtIII{\RImQNode}{\QNode}{\INode}{\INode}}
+\newcommand{\ImQfuQfuuIfQf}{\oIVtIII{\RImQNode}{\QNode}{\INode}{\QNode}}
+\newcommand{\ImQfuQfuuIfImQf}{\oIVtIII{\RImQNode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuQfuuQfIf}{\oIVtIII{\RImQNode}{\QNode}{\QNode}{\INode}}
+\newcommand{\ImQfuQfuuQfQf}{\oIVtIII{\RImQNode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuQfuuQfImQf}{\oIVtIII{\RImQNode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuQfuuImQfIf}{\oIVtIII{\RImQNode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuQfuuImQfQf}{\oIVtIII{\RImQNode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuQfuuImQfImQf}{\oIVtIII{\RImQNode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuImQfuuIfIf}{\oIVtIII{\RImQNode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuImQfuuIfQf}{\oIVtIII{\RImQNode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\ImQfuImQfuuIfImQf}{\oIVtIII{\RImQNode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuImQfuuQfIf}{\oIVtIII{\RImQNode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuImQfuuQfQf}{\oIVtIII{\RImQNode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuImQfuuQfImQf}{\oIVtIII{\RImQNode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuImQfuuImQfIf}{\oIVtIII{\RImQNode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuImQfuuImQfQf}{\oIVtIII{\RImQNode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuImQfuuImQfImQf}{\oIVtIII{\RImQNode}{\ImQNode}{\ImQNode}{\ImQNode}}
+% ======================================
+% trees of order 4 and type 4
+% ======================================
+\newcommand{\IfuIfuIfuIf}{\oIVtIV{\RINode}{\INode}{\INode}{\INode}}
+\newcommand{\IfuIfuIfuQf}{\oIVtIV{\RINode}{\INode}{\INode}{\QNode}}
+\newcommand{\IfuIfuIfuImQf}{\oIVtIV{\RINode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\IfuIfuQfuIf}{\oIVtIV{\RINode}{\INode}{\QNode}{\INode}}
+\newcommand{\IfuIfuQfuQf}{\oIVtIV{\RINode}{\INode}{\QNode}{\QNode}}
+\newcommand{\IfuIfuQfuImQf}{\oIVtIV{\RINode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\IfuIfuImQfuIf}{\oIVtIV{\RINode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\IfuIfuImQfuQf}{\oIVtIV{\RINode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\IfuIfuImQfuImQf}{\oIVtIV{\RINode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuQfuIfuIf}{\oIVtIV{\RINode}{\QNode}{\INode}{\INode}}
+\newcommand{\IfuQfuIfuQf}{\oIVtIV{\RINode}{\QNode}{\INode}{\QNode}}
+\newcommand{\IfuQfuIfuImQf}{\oIVtIV{\RINode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\IfuQfuQfuIf}{\oIVtIV{\RINode}{\QNode}{\QNode}{\INode}}
+\newcommand{\IfuQfuQfuQf}{\oIVtIV{\RINode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\IfuQfuQfuImQf}{\oIVtIV{\RINode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\IfuQfuImQfuIf}{\oIVtIV{\RINode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\IfuQfuImQfuQf}{\oIVtIV{\RINode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\IfuQfuImQfuImQf}{\oIVtIV{\RINode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\IfuImQfuIfuIf}{\oIVtIV{\RINode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\IfuImQfuIfuQf}{\oIVtIV{\RINode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\IfuImQfuIfuImQf}{\oIVtIV{\RINode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\IfuImQfuQfuIf}{\oIVtIV{\RINode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\IfuImQfuQfuQf}{\oIVtIV{\RINode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\IfuImQfuQfuImQf}{\oIVtIV{\RINode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\IfuImQfuImQfuIf}{\oIVtIV{\RINode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\IfuImQfuImQfuQf}{\oIVtIV{\RINode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\IfuImQfuImQfuImQf}{\oIVtIV{\RINode}{\ImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuIfuIfuIf}{\oIVtIV{\RQNode}{\INode}{\INode}{\INode}}
+\newcommand{\QfuIfuIfuQf}{\oIVtIV{\RQNode}{\INode}{\INode}{\QNode}}
+\newcommand{\QfuIfuIfuImQf}{\oIVtIV{\RQNode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\QfuIfuQfuIf}{\oIVtIV{\RQNode}{\INode}{\QNode}{\INode}}
+\newcommand{\QfuIfuQfuQf}{\oIVtIV{\RQNode}{\INode}{\QNode}{\QNode}}
+\newcommand{\QfuIfuQfuImQf}{\oIVtIV{\RQNode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\QfuIfuImQfuIf}{\oIVtIV{\RQNode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\QfuIfuImQfuQf}{\oIVtIV{\RQNode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\QfuIfuImQfuImQf}{\oIVtIV{\RQNode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuQfuIfuIf}{\oIVtIV{\RQNode}{\QNode}{\INode}{\INode}}
+\newcommand{\QfuQfuIfuQf}{\oIVtIV{\RQNode}{\QNode}{\INode}{\QNode}}
+\newcommand{\QfuQfuIfuImQf}{\oIVtIV{\RQNode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\QfuQfuQfuIf}{\oIVtIV{\RQNode}{\QNode}{\QNode}{\INode}}
+\newcommand{\QfuQfuQfuQf}{\oIVtIV{\RQNode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\QfuQfuQfuImQf}{\oIVtIV{\RQNode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuQfuImQfuIf}{\oIVtIV{\RQNode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\QfuQfuImQfuQf}{\oIVtIV{\RQNode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuQfuImQfuImQf}{\oIVtIV{\RQNode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\QfuImQfuIfuIf}{\oIVtIV{\RQNode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\QfuImQfuIfuQf}{\oIVtIV{\RQNode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\QfuImQfuIfuImQf}{\oIVtIV{\RQNode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\QfuImQfuQfuIf}{\oIVtIV{\RQNode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\QfuImQfuQfuQf}{\oIVtIV{\RQNode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\QfuImQfuQfuImQf}{\oIVtIV{\RQNode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\QfuImQfuImQfuIf}{\oIVtIV{\RQNode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\QfuImQfuImQfuQf}{\oIVtIV{\RQNode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\QfuImQfuImQfuImQf}{\oIVtIV{\RQNode}{\ImQNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuIfuIfuIf}{\oIVtIV{\RImQNode}{\INode}{\INode}{\INode}}
+\newcommand{\ImQfuIfuIfuQf}{\oIVtIV{\RImQNode}{\INode}{\INode}{\QNode}}
+\newcommand{\ImQfuIfuIfuImQf}{\oIVtIV{\RImQNode}{\INode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuIfuQfuIf}{\oIVtIV{\RImQNode}{\INode}{\QNode}{\INode}}
+\newcommand{\ImQfuIfuQfuQf}{\oIVtIV{\RImQNode}{\INode}{\QNode}{\QNode}}
+\newcommand{\ImQfuIfuQfuImQf}{\oIVtIV{\RImQNode}{\INode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuIfuImQfuIf}{\oIVtIV{\RImQNode}{\INode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuIfuImQfuQf}{\oIVtIV{\RImQNode}{\INode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuIfuImQfuImQf}{\oIVtIV{\RImQNode}{\INode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuQfuIfuIf}{\oIVtIV{\RImQNode}{\QNode}{\INode}{\INode}}
+\newcommand{\ImQfuQfuIfuQf}{\oIVtIV{\RImQNode}{\QNode}{\INode}{\QNode}}
+\newcommand{\ImQfuQfuIfuImQf}{\oIVtIV{\RImQNode}{\QNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuQfuQfuIf}{\oIVtIV{\RImQNode}{\QNode}{\QNode}{\INode}}
+\newcommand{\ImQfuQfuQfuQf}{\oIVtIV{\RImQNode}{\QNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuQfuQfuImQf}{\oIVtIV{\RImQNode}{\QNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuQfuImQfuIf}{\oIVtIV{\RImQNode}{\QNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuQfuImQfuQf}{\oIVtIV{\RImQNode}{\QNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuQfuImQfuImQf}{\oIVtIV{\RImQNode}{\QNode}{\ImQNode}{\ImQNode}}
+\newcommand{\ImQfuImQfuIfuIf}{\oIVtIV{\RImQNode}{\ImQNode}{\INode}{\INode}}
+\newcommand{\ImQfuImQfuIfuQf}{\oIVtIV{\RImQNode}{\ImQNode}{\INode}{\QNode}}
+\newcommand{\ImQfuImQfuIfuImQf}{\oIVtIV{\RImQNode}{\ImQNode}{\INode}{\ImQNode}}
+\newcommand{\ImQfuImQfuQfuIf}{\oIVtIV{\RImQNode}{\ImQNode}{\QNode}{\INode}}
+\newcommand{\ImQfuImQfuQfuQf}{\oIVtIV{\RImQNode}{\ImQNode}{\QNode}{\QNode}}
+\newcommand{\ImQfuImQfuQfuImQf}{\oIVtIV{\RImQNode}{\ImQNode}{\QNode}{\ImQNode}}
+\newcommand{\ImQfuImQfuImQfuIf}{\oIVtIV{\RImQNode}{\ImQNode}{\ImQNode}{\INode}}
+\newcommand{\ImQfuImQfuImQfuQf}{\oIVtIV{\RImQNode}{\ImQNode}{\ImQNode}{\QNode}}
+\newcommand{\ImQfuImQfuImQfuImQf}{\oIVtIV{\RImQNode}{\ImQNode}{\ImQNode}{\ImQNode}}
