@@ -21,6 +21,18 @@ allTrees={1:
               2:("\oIVtII","\{}fuu{}fu{}f{}f"),
               3:("\oIVtIII","\{}fu{}fuu{}f{}f"),
               4:("\oIVtIV","\{}fu{}fu{}fu{}f")
+          },
+          5:
+          {
+              1:("\oVtI","\{}fuuuu{}f{}f{}f{}f"),
+              2:("\oVtII","\{}fuuu{}fu{}f{}f{}f"),
+              3:("\oVtIII","\{}fuu{}fuu{}f{}f{}f"),
+              4:("\oVtIV","\{}fuu{}fu{}f{}fu{}f"),
+              5:("\oVtV","\{}fuu{}fu{}fu{}f{}f"),
+              6:("\oVtVI","\{}fu{}fuuu{}f{}f{}f"),
+              7:("\oVtVII","\{}fu{}fuu{}fu{}f{}f"),
+              8:("\oVtVIII","\{}fu{}fu{}fuu{}f{}f"),
+              9:("\oVtIX","\{}fu{}fu{}fu{}fu{}f")
           }
           }
 
